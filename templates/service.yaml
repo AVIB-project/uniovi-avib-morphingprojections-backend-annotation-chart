@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "uniovi-avib-morphingprojections-backend.fullname" . }}
+  name: {{ include "uniovi-avib-morphingprojections-backend-annotation.fullname" . }}
   labels:
-    {{- include "uniovi-avib-morphingprojections-backend.labels" . | nindent 4 }}
+    {{- include "uniovi-avib-morphingprojections-backend-annotation.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "uniovi-avib-morphingprojections-backend.selectorLabels" . | nindent 4 }}
+    {{- include "uniovi-avib-morphingprojections-backend-annotation.selectorLabels" . | nindent 4 }}

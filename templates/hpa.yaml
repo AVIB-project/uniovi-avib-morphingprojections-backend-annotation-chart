@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "uniovi-avib-morphingprojections-backend.fullname" . }}
+  name: {{ include "uniovi-avib-morphingprojections-backend-annotation.fullname" . }}
   labels:
-    {{- include "uniovi-avib-morphingprojections-backend.labels" . | nindent 4 }}
+    {{- include "uniovi-avib-morphingprojections-backend-annotation.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "uniovi-avib-morphingprojections-backend.fullname" . }}
+    name: {{ include "uniovi-avib-morphingprojections-backend-annotation.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:

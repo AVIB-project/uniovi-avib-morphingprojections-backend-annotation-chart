@@ -1,13 +1,13 @@
 # Description
 
-A Chart project for uniovi-avib-morphingprojections-backend-chart microservice
+A Chart project for uniovi-avib-morphingprojections-backend-annotation microservice
 
 # Deploye steps
 
 **STEP01**: create a helm chart projection
 
 ```
-$ helm create uniovi-avib-morphingprojections-backend-chart
+$ helm create uniovi-avib-morphingprojections-backend-annotation-chart
 ```
 
 **STEP02**: build chart package
@@ -23,5 +23,5 @@ $ helm package .
 This command will publish our chart package inside our ACR repository
 
 ```
-$ helm push uniovi-avib-morphingprojections-backend-chart-1.0.0.tgz oci://avibdocker.azurecr.io/helm
+$ helm push uniovi-avib-morphingprojections-backend-annotation-chart-1.0.0.tgz oci://avibdocker.azurecr.io/helm
 ```
